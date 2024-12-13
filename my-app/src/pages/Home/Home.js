@@ -1,6 +1,9 @@
 import React from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from "./Home.module.css";
+import 'swiper/css';
+
 import dummy from "../../asstes/images/img_dummy.gif";
 
 //icons
@@ -32,30 +35,33 @@ const Home = () => {
             </div>
         </div>
         <div className={`${styles.my_binder_list}`}>
-            <ul>
-                <li className={`${styles.ticket_shape}`}>
-                    <div className={`dot ${styles.contents_title}`}>THE VOLUNTEERS ASIA TOUR 2024 - SEOUL</div>
-                    <div className={`${styles.contents_poster}`}>
-                        <div className={`${styles.img_box}`}>
-                            <img src={dummy} alt="THE VOLUNTEERS ASIA TOUR"/>
-                            <div className={`${styles.review_num}`}>
-                                <FaStar className={`${styles.star}`}/> 5
-                            </div>
+        <Swiper
+            slidesPerView={1.8}
+            spaceBetween={10}
+            className={`${styles.my_binder_list}`}>
+            <SwiperSlide  className={`${styles.ticket_shape}`}>
+                <div className={`dot ${styles.contents_title}`}>THE VOLUNTEERS ASIA TOUR 2024 - SEOUL</div>
+                <div className={`${styles.contents_poster}`}>
+                    <div className={`${styles.img_box}`}>
+                        <img src={dummy} alt="THE VOLUNTEERS ASIA TOUR"/>
+                        <div className={`${styles.review_num}`}>
+                            <FaStar className={`${styles.star}`}/> 5
                         </div>
                     </div>
-                </li>
-                <li className={`${styles.ticket_shape}`}>
-                    <div className={`dot ${styles.contents_title}`}>THE VOLUNTEERS ASIA TOUR 2024 - SEOUL</div>
-                    <div className={`${styles.contents_poster}`}>
-                        <div className={`${styles.img_box}`}>
-                            <img src={dummy} alt="THE VOLUNTEERS ASIA TOUR"/>
-                            <div className={`${styles.review_num}`}>
-                                <FaStar className={`${styles.star}`}/> 5
-                            </div>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide  className={`${styles.ticket_shape}`}>
+                <div className={`dot ${styles.contents_title}`}>THE VOLUNTEERS ASIA TOUR 2024 - SEOUL</div>
+                <div className={`${styles.contents_poster}`}>
+                    <div className={`${styles.img_box}`}>
+                        <img src={dummy} alt="THE VOLUNTEERS ASIA TOUR"/>
+                        <div className={`${styles.review_num}`}>
+                            <FaStar className={`${styles.star}`}/> 5
                         </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </SwiperSlide>
+        </Swiper>
         </div>
         </>
     );

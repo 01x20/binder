@@ -1,0 +1,12 @@
+@use "../styles/mixin";
+
+.header {
+    @include mixin.flex-box(row, center, flex-start);
+    height: 50px;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+}

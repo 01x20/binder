@@ -1,16 +1,18 @@
 import React from "react";
 
-import '../assets/styles/common.css';
+import "../asstes/styles/common.css";
 
 import Header from "../components/Header/Header.js";
+import Footer from "../components/Footer/Footer.js";
 
 const Layout = (prop) => {
   return (
     <div>
         <Header />
-        <main>
+        <main className="contents_wrap">
             {prop.children}
         </main>
+        <Footer />
     </div>
   );
 }

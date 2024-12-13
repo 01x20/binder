@@ -1,12 +1,13 @@
 :root {
-  --primary-color: #73B3E6;
-  --secondary-color: #D97B92;
-  --primary-gray: #ECECEC;
+  --primary-color: #3884F5;
+  --secondary-color: #EB6695;
   --text-gray: #9399A1;
   --gray-300: #B3B8C1;
   --text-color: #2B282F;
   --border-color: #EDF0F4;
   --color-white: #fff;
+  --primary-bg-color: #E0EEFF;
+  --secondary-bg-color: #FFEAF1;
 }
 
 ::-webkit-scrollbar {
@@ -25,7 +26,7 @@ summary, time, mark, audio, video, input, button, select, textarea {
   padding: 0;
   vertical-align: top;
   box-sizing: border-box;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Pretendard", sans-serif;
 }
 
 article, aside, details, figcaption, figure,
@@ -59,7 +60,7 @@ fieldset, img {
   border: 0;
 }
 
-ol, ul {
+ol, ul, li {
   list-style: none;
 }
 
@@ -92,7 +93,6 @@ table {
 }
 
 html {
-  font-size: 10px;
   color: var(--text-color);
   line-height: 1.5;
   font-weight: 400;
@@ -106,8 +106,8 @@ textarea {
 body, input, select, textarea, button {
   border: none;
   background: none;
-  font-size: 1.3rem;
-  letter-spacing: -0.05rem;
+  font-size: 14px;
+  letter-spacing: -0.5px;
 }
 
 table {
@@ -131,4 +131,7 @@ table {
   white-space: nowrap;
 }
 
-/* dot effect common *//*# sourceMappingURL=common.css.map */
+/* dot effect common */
+.contents_wrap {
+  padding: 50px 0 60px;
+}/*# sourceMappingURL=common.css.map */

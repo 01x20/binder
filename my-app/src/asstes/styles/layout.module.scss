@@ -1,12 +1,55 @@
 @use "../styles/mixin";
 
+@mixin position-fixed {
+    position: fixed;
+    @include mixin.pos-x-center;
+    width: 100%;
+    background: var(--color-white);
+}
+
+//header
 .header {
     @include mixin.flex-box(row, center, flex-start);
     height: 50px;
     padding: 0 20px;
+    @include position-fixed;
+    top: 0;
 }
 
 .logo {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
+}
+
+//footer
+.footer {
+    border-top: 1px solid var(--border-color);
+    @include mixin.flex-box(row, center, center);
+    height: 60px;
+    padding: 20px;
+    @include position-fixed;
+    bottom: 0;
+
+    ul {
+        @include mixin.flex-box(row, center, center);
+        width: 100%;
+
+        li {
+            flex: 1;
+            text-align: center;
+        }
+    }
+}
+.footer_btn {
+    @include mixin.flex-box(column, center, center);
+    width: 100%;
+}
+.icon {
+    font-size: 20px;
+    color: var(--gray-300);
+}
+
+.text {
+    font-size: 12px;
+    color: var(--gray-300);
 }

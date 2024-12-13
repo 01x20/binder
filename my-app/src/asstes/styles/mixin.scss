@@ -25,3 +25,7 @@
     align-items: $center;
     justify-content: $flex-start;
 }
+
+@mixin common-padding {
+    padding: 0 20px;
+}

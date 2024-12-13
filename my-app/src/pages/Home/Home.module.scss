@@ -1,0 +1,164 @@
+@use "../../asstes/styles/mixin";
+
+.top_banner {
+    @include mixin.common-padding;
+    padding-top: 20px;
+    background: url('../../asstes/images/icons/ico_main.png') right 5px bottom no-repeat;
+    background-size: 120px;
+}
+.text_box {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    border-top-left-radius: 30px;
+    box-shadow: 2px 6px 6px rgba(0,0,0,0.05);
+    font-size: 16px;
+    padding: 13px 35px;
+    position: relative;
+    z-index: -1;
+}
+.my_binder_wrap {
+    margin-top: 50px;
+    @include mixin.common-padding;
+}
+.desc {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-gray);
+    letter-spacing: 0;
+}
+.title_btn {
+    @include mixin.flex-box(row, center, space-between);
+    margin-bottom: 10px;
+
+    .title {
+        font-size: 16px;
+        letter-spacing: -1px;
+
+        & > span {
+            color: var(--primary-color);
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                @include mixin.before-after;
+                width: calc(100% + 4px);
+                height: 6px;
+                background: var(--primary-bg-color);
+                z-index: -1;
+                @include mixin.pos-x-center;
+                bottom: 0;
+            }
+        }
+    }
+    .btn {
+        font-size: 12px;
+        color: var(--text-gray);
+    }
+}
+.empty_box {
+    height: 190px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    border: 1px dashed var(--primary-bg-color);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 13px;
+    display: none;
+
+    .text {
+        @include mixin.flex-box(column, center, center);
+        height: 100%;
+    }
+    .icon {
+        font-size: 22px;
+        color: var(--primary-bg-color);
+    }
+}
+.my_binder_list {
+    padding-left: 20px;
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+}
+.ticket_shape {
+    border: 1px solid var(--primary-bg-color);
+    background: var(--color-white);
+    position: relative;
+    padding: 10px 16px 12px;
+    max-width: 170px;
+    border-radius: 6px;
+    box-shadow: inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+
+    &::before, &::after {
+        @include mixin.before-after;
+        width: 14px;
+        height: 7px;
+        border: 1px solid var(--primary-bg-color);
+        border-bottom: 0;
+        background: var(--color-white);
+        border-radius: 100px 100px 0 0;
+        left: -5px;
+        top: 35px;
+        transform: rotate(90deg);
+    }
+    &::after {
+        left: auto;
+        right: -5px;
+        transform: rotate(-90deg);
+    }
+}
+.contents_title {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0;
+}
+.contents_poster {
+    padding-top: 10px;
+    margin-top: 8px;
+    border-top: 1px dashed var(--primary-bg-color);
+    position: relative;
+}
+.img_box {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-bottom: 134%;
+    border-radius: 3px;
+    overflow: hidden;
+
+    &::before {
+        @include mixin.before-after;
+        @include mixin.pos-center;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg,#222, transparent);
+        z-index: 1;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include mixin.pos-center;
+    }
+    .review_num {
+        position: absolute;
+        @include mixin.flex-box(row, center, center);
+        z-index: 1;
+        left: 8px;
+        bottom: 8px;
+        font-size: 13px;
+        color: var(--color-white);
+
+        .star {
+            color: #FFD57E;
+            margin-right: 2px;
+        }
+    }
+}

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from 'react-datepicker';
+import axios from "axios";
 
 import styles from "./Write.module.css";
 import 'react-datepicker/dist/react-datepicker.css';
@@ -17,13 +18,36 @@ import { FiCalendar } from "react-icons/fi";
 import { FaStar } from "react-icons/fa6";
 import { LuSearch } from "react-icons/lu";
 
+const URL = "http://kopis.or.kr/openApi/restful/pblprfr";
+
 const Write = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const [data, setData] = useState(null);
+    const key = process.env.REACT_APP_API_KEY;
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
+
+    const fetchData = async () => {
+        const response = await axios.get(URL, {
+            params: {
+                service: decodeURIComponent(key),
+                stdate: 20241118,
+                eddate: 20241218,
+                cpage: 1,
+                rows: 10
+            },
+        });
+        setData(response);
+    };
+
+    useEffect(() => {
+        //fetchData();
+    }, []);
+
+    console.log(process.env.REACT_APP_API_KEY);
 
     return (
         <>

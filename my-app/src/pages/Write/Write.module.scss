@@ -1,0 +1,165 @@
+@use "../../asstes/styles/mixin";
+
+.inner {
+    @include mixin.common-padding;
+}
+.search {
+    @include mixin.flex-box(row, center, center);
+    @include mixin.form-basic;
+    width: 100%;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+    gap: 4px;
+}
+.input_wrap {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+
+    .icon {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+        left: 10px;
+        @include mixin.pos-y-center;
+    }
+    input {
+        width: 100%;
+        padding: 0 10px 0 30px;
+    }
+}
+
+.flex_box {
+    @include mixin.flex-box(row, flex-start, flex-start);
+    gap: 10px;
+
+    .flag {
+        width: auto;
+        display: inline-block;
+        height: 22px;
+        line-height: 22px;
+        padding: 0 6px;
+        border-radius: 3px;
+        background: var(--secondary-bg-color);
+        color: var(--secondary-color);
+    }
+
+    .left, .right {margin-top: 10px;}
+
+    .left {
+        width:calc(45.5% - 5px);
+
+        img {
+            width: 100%;
+            border-radius: 6px;
+        }
+    }
+}
+
+.review_box {
+    margin-top: 10px;
+    @include mixin.flex-box(row, center, space-between);
+    gap: 10px;
+
+    .title {
+        font-size: 15px;
+        width: calc(100% - 110px);
+        .icon {color: var(--yellow-color);}
+    }
+    
+
+    .input {
+        position: relative;
+        width: 50px;
+        text-align: right;
+
+        input {
+            text-align: right;
+            width: 100%;
+            padding: 0 30px 0 5px;
+            line-height: 22px;
+            font-weight: 700;
+            border: none;
+            height: auto;
+        }
+        & > span {
+            position: absolute;
+            right: 0;
+            @include mixin.pos-y-center;
+            color: var(--text-gray);
+        }
+    }
+}
+
+//modals
+.datepicker_wrap {
+    @include mixin.flex-box(row,center,flex-start);
+    gap: 5px;
+    .datepicker {
+        position: relative;
+        width: calc(50% - 10px);
+        input {
+            padding: 0 10px 0 30px;
+            width: 100%;
+        }
+        .icon {
+            position: absolute;
+            left: 10px;
+            @include mixin.pos-y-center;
+            z-index: 1;
+        }
+    }
+}
+.search_wrap {
+    margin-top: 10px;
+    @include mixin.flex-box(row, center, flex-start);
+    gap: 10px;
+
+    input {
+        width: calc(100% - 70px);
+    }
+    button {
+        @include mixin.form-basic;
+        width: 60px;
+        border-color: var(--primary-color);
+        background: var(--primary-color);
+        color: var(--color-white);
+        font-size: 20px;
+    }
+}
+.result_wrap {
+    margin-top: 20px;
+    ul {
+        @include mixin.flex-box(row, center, flex-start);
+        flex-wrap: wrap;
+        gap: 4px;
+
+        li {
+            width: calc(50% - 2px);
+        }
+    }
+}
+.bottom_btn {
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+    width: calc(100% - 32px);
+    @include mixin.pos-x-center;
+
+    button {
+        @include mixin.form-basic;
+        border-color: var(--primary-color);
+        background: var(--primary-color);
+        color: var(--color-white);
+        width: 100%;
+
+        &:disabled {
+            background-color: var(--gray-bg-color);
+            border-color: var(--border-color);
+            color: var(--text-gray);
+        }
+    }
+}

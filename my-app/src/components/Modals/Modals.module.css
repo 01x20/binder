@@ -1,0 +1,54 @@
+.modal_wrap {
+  position: fixed;
+  background: var(--color-white);
+  width: 100%;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  min-height: 300px;
+  max-height: calc(100vh - 150px);
+  transition: all 0.3s ease-in-out;
+}
+.modal_wrap.modal_show {
+  bottom: 0;
+  display: block;
+}
+.modal_wrap .modal_header {
+  position: relative;
+}
+.modal_wrap .modal_header .title {
+  font-size: 16px;
+  text-align: center;
+  padding: 15px 0 10px;
+}
+.modal_wrap .modal_header .modal_close {
+  position: absolute;
+  font-size: 20px;
+  background-size: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  color: var(--text-color);
+}
+.modal_wrap .modal_body {
+  padding: 10px 16px;
+}
+
+.dimmed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  display: none;
+}
+.dimmed.active {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}/*# sourceMappingURL=Modals.module.css.map */

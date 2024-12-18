@@ -1,0 +1,192 @@
+.inner {
+  padding: 0 20px;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  width: 100%;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 10px;
+  gap: 4px;
+}
+
+.input_wrap {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+.input_wrap .icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.input_wrap input {
+  width: 100%;
+  padding: 0 10px 0 30px;
+}
+
+.flex_box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.flex_box .flag {
+  width: auto;
+  display: inline-block;
+  height: 22px;
+  line-height: 22px;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: var(--secondary-bg-color);
+  color: var(--secondary-color);
+}
+.flex_box .left, .flex_box .right {
+  margin-top: 10px;
+}
+.flex_box .left {
+  width: calc(45.5% - 5px);
+}
+.flex_box .left img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.review_box {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.review_box .title {
+  font-size: 15px;
+  width: calc(100% - 110px);
+}
+.review_box .title .icon {
+  color: var(--yellow-color);
+}
+.review_box .input {
+  position: relative;
+  width: 50px;
+  text-align: right;
+}
+.review_box .input input {
+  text-align: right;
+  width: 100%;
+  padding: 0 30px 0 5px;
+  line-height: 22px;
+  font-weight: 700;
+  border: none;
+  height: auto;
+}
+.review_box .input > span {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-gray);
+}
+
+.datepicker_wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.datepicker_wrap .datepicker {
+  position: relative;
+  width: calc(50% - 10px);
+}
+.datepicker_wrap .datepicker input {
+  padding: 0 10px 0 30px;
+  width: 100%;
+}
+.datepicker_wrap .datepicker .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.search_wrap {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.search_wrap input {
+  width: calc(100% - 70px);
+}
+.search_wrap button {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  width: 60px;
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+  color: var(--color-white);
+  font-size: 20px;
+}
+
+.result_wrap {
+  margin-top: 20px;
+}
+.result_wrap ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.result_wrap ul li {
+  width: calc(50% - 2px);
+}
+
+.bottom_btn {
+  position: fixed;
+  bottom: 0;
+  padding: 10px 0;
+  width: calc(100% - 32px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom_btn button {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+  color: var(--color-white);
+  width: 100%;
+}
+.bottom_btn button:disabled {
+  background-color: var(--gray-bg-color);
+  border-color: var(--border-color);
+  color: var(--text-gray);
+}/*# sourceMappingURL=Write.module.css.map */

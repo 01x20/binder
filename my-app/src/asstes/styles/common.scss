@@ -1,3 +1,4 @@
+@use "mixin";
 
 :root {
     --primary-color: #3884F5;
@@ -9,6 +10,8 @@
     --color-white: #fff;
     --primary-bg-color: #E0EEFF;
     --secondary-bg-color: #FFEAF1;
+    --gray-bg-color: #FAFBFC;
+    --yellow-color : #FFEB53;
 }
 
 ::-webkit-scrollbar {
@@ -30,15 +33,22 @@ summary,time, mark, audio, video, input, button, select, textarea {
     font-family: 'Pretendard', sans-serif;
 }
 
+body,input,select,textarea,button {
+    border: none;
+    background: none;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+}
+
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
     display: block;
 }
 
 input {
-    border-radius: 0;
     vertical-align: middle;
     outline: none;
+    @include mixin.form-basic;
 
     &::-webkit-input-placeholder {
         color: var(--text-gray);
@@ -46,14 +56,16 @@ input {
     &:-ms-input-placeholder {
         color: var(--text-gray);
     }
-    
+    &:read-only {
+        background-color: var(--gray-bg-color);
+    }
 }
 button {
     cursor: pointer;
-    vertical-align: middle;
     outline: none;
 }
 select {
+    @include mixin.form-basic;
     &::-ms-expand{
         display:none;
     }
@@ -96,12 +108,6 @@ textarea {
     resize: none;
     border: 1px solid var(--border-color);
 }
-body,input,select,textarea,button {
-    border: none;
-    background: none;
-    font-size: 14px;
-    letter-spacing: -0.5px;
-}
 table {
     border: none; 
     background: none;
@@ -124,4 +130,9 @@ table {
 //main-container
 .contents_wrap {
     padding: 50px 0 60px;
+}
+
+//datepicker
+.react-datepicker-wrapper {
+    width: 100%;
 }

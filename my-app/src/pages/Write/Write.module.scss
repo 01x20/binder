@@ -20,9 +20,8 @@
 
     .icon {
         position: absolute;
-        width: 20px;
-        height: 20px;
-        font-size: 16px;
+        width: 14px;
+        height: 14px;
         left: 10px;
         @include mixin.pos-y-center;
     }
@@ -135,10 +134,52 @@
     ul {
         @include mixin.flex-box(row, center, flex-start);
         flex-wrap: wrap;
-        gap: 4px;
+        gap: 8px;
+        height: 475px;
+        overflow-y: auto;
 
         li {
-            width: calc(50% - 2px);
+            width: calc(50% - 4px);
+
+            &.selected {
+                .title {
+                    color: var(--primary-color);
+                }
+            }
+
+            input {
+                display: none; 
+            }
+        }
+    }
+    .img_box {
+        width: 100%;
+        height: 0;
+        padding-top: 140%;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            @include mixin.pos-center;
+        }
+        .title {
+            position: absolute;
+            width: 100%;
+            @include mixin.pos-x-center;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            padding: 10px 4px;
+            margin-top: 4px;
+            letter-spacing: 0;
+            font-weight: 500;
+            color: var(--color-white);
         }
     }
 }
@@ -162,4 +203,12 @@
             color: var(--text-gray);
         }
     }
+}
+
+.result_none {
+    @include mixin.flex-box(column, center, center);
+    height: 500px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-gray);
 }

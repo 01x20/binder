@@ -8,8 +8,7 @@
   z-index: 50;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  min-height: 300px;
-  max-height: calc(100vh - 150px);
+  height: calc(100vh - 50px);
   transition: all 0.3s ease-in-out;
 }
 .modal_wrap.modal_show {

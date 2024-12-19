@@ -37,3 +37,10 @@
     line-height: 40px;
     padding: 0 10px;
 }
+@mixin dot-line ($line) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+}
